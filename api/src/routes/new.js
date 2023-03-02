@@ -2,6 +2,7 @@ const express = require('express');
 const Url = require('../models/url');
 const { GenerateString } = require('./../utils/generator');
 const router = express.Router();
+const session = require('express-session');
 
 
 // create new shorten url address in format <domain>/<subpart>
@@ -10,10 +11,12 @@ const router = express.Router();
 router.post("", async (req, res, next) => {
 
     const subpart = GenerateString(7);
+    req.session.user = req.sessionID;
 
     const newUrl = new Url({
         origin: req.body.origin,
-        subpart
+        subpart,
+        user: req.sessionID
     });
 
     newUrl.save().then(createdUrl => {
