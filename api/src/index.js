@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
     secret: 'my-super-secret-key',
     cookie: {
-        maxAge: 10000  // 10 sec
+        maxAge: 100000  // 10 sec
     },
     // saveUninitialized: false, // will save it if session was modified only
     saveUninitialized: true, // will save it
@@ -36,6 +36,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
     next();
 });
+
 
 const startServer = () => {
     app.listen(port, async () => {

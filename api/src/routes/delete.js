@@ -11,12 +11,5 @@ router.delete('/:subpart', async (req, res) => {
     res.send({})
 });
 
-// // delete document, based on document <id>
-// router.delete('/:id', async (req, res) => {
-//     console.log(req.params);
-//     const url = await Url.deleteOne({ _id: req.params.id });
-//     // res.status(200).json({ message: 'Url deleted'});
-//     res.send({})
-// });
 
 module.exports = router;

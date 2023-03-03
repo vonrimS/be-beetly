@@ -3,6 +3,7 @@
 // declare all characters
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
+// generate <subpart> with no special characters
 const GenerateString = (length) => {
     let result = '';
     const charactersLength = characters.length;
